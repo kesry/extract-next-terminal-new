@@ -91,7 +91,7 @@ jobs:
           mkdir -p output/${{ matrix.name }}
           
           # 提取rootfs内的二进制文件
-          cp -a "next-terminal-${{ matrix.name }}/usr/local/next-terminal" output/${{ matrix.name }}/
+          cp -a "rootfs-${{ matrix.name }}/usr/local/next-terminal" output/${{ matrix.name }}/
 
           # 打包
           cd output/${{ matrix.name }}/next-terminal
