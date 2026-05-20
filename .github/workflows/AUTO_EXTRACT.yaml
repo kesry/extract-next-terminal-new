@@ -85,7 +85,7 @@ jobs:
           oci:next-terminal-${{ matrix.name }}:${{ steps.upstream.outputs.latest }}
 
           # 提取rootfs
-          ./umoci raw unpack --image next-terminal-${{ matrix.name }}:${{ steps.upstream.outputs.latest }} rootfs-${{ matrix.name }}
+          ./umoci raw unpack --image next-terminal-${{ matrix.name }}:${{ steps.upstream.outputs.latest }} --rootless rootfs-${{ matrix.name }}
 
           # 创建最终提取的目录
           mkdir -p output/${{ matrix.name }}
