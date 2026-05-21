@@ -28,7 +28,8 @@ jobs:
           REPO: dushixiang/next-terminal
           GH_TOKEN: ${{ secrets.HUB_TOKEN }}
         run: |
-          LATEST=$(gh api repos/$REPO/releases/latest --jq .tag_name)
+          apt update && apt install jq curl -y
+          LATEST=$(curl -fsSL https://license.typesafe.cn/api/versions | jq '.[0].version')
           echo "latest=${LATEST}" >> $GITHUB_OUTPUT
           echo "上游最新版本: ${LATEST}"
           VERSION_CLEAN="${LATEST#v}"
