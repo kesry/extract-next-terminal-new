@@ -97,7 +97,7 @@ jobs:
           # 打包
           cd output/${{ matrix.name }}/next-terminal
           mkdir data
-          curl -sSL https://f.typesafe.cn/next-terminal/config.yaml > config.yaml
+          curl -sSL https://f.next-terminal.com/next-terminal/config.yaml > config.yaml
           cd ../
           zip -r next-terminal_${{ steps.upstream.outputs.latest }}_${{ matrix.name }}.zip next-terminal
 
